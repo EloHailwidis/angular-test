@@ -9,6 +9,19 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', ['$scope', function($scope) {
 
+	$scope.add = function(a, b) {
+		return a + b;
+	};
+
+	$scope.less = function(a, b) {
+		return a - b;
+	};
+	
+	$scope.a = 10;
+	$scope.b = 2;
+	
+	$scope.resultAdd = $scope.add($scope.a, $scope.b);
+	$scope.resultLess = $scope.less($scope.a, $scope.b);
 }]);
