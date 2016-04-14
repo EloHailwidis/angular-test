@@ -14,25 +14,31 @@ describe('View1Ctrl', function() {
 	describe('Calculator', function() {
 		var $scope;
 		var controller;
+		var a = 20;
+		var b = 2;
+		var c = -2;
 		
 		beforeEach(function() {
     		$scope = {};
       		controller = $controller('View1Ctrl', { $scope: $scope });
+      		expect(a).toEqual(jasmine.any(Number));
+			expect(b).toEqual(jasmine.any(Number));
+			expect(c).toEqual(jasmine.any(Number));
   		});
 
 		it('should add two numbers correctly', function() {
-      		var addFn = $scope.add(1, 2);
-		    expect(addFn).toEqual(3);
+      		var addFn = $scope.add(a, b);
+		    expect(addFn).toEqual(22);
 		});
 
 		it('should subtract two numbers correctly', function() {
-		    var lessFn = $scope.less(6, 2);
-		    expect(lessFn).toEqual(4);	
+		    var lessFn = $scope.less(a, b);
+		    expect(lessFn).toEqual(18);	
 		});
 
 		it('should add negative numbers', function() {
-		    var addFn = $scope.add(10, -2);
-		    expect(addFn).toEqual(8);
+		    var addFn = $scope.add(a, c);
+		    expect(addFn).toEqual(18);
 		});
 
 	})
