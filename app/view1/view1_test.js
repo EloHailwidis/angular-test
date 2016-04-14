@@ -12,24 +12,25 @@ describe('View1Ctrl', function() {
 	}));
 
 	describe('Calculator', function() {
+		var $scope;
+		var controller;
+		
+		beforeEach(function() {
+    		$scope = {};
+      		controller = $controller('View1Ctrl', { $scope: $scope });
+  		});
 
 		it('should add two numbers correctly', function() {
-			var $scope = {};
-      		var controller = $controller('View1Ctrl', { $scope: $scope });
       		var addFn = $scope.add(1, 2);
 		    expect(addFn).toEqual(3);
 		});
 
 		it('should subtract two numbers correctly', function() {
-			var $scope = {};
-      		var controller = $controller('View1Ctrl', { $scope: $scope });
 		    var lessFn = $scope.less(6, 2);
 		    expect(lessFn).toEqual(4);	
 		});
 
 		it('should add negative numbers', function() {
-			var $scope = {};
-      		var controller = $controller('View1Ctrl', { $scope: $scope });
 		    var addFn = $scope.add(10, -2);
 		    expect(addFn).toEqual(8);
 		});
