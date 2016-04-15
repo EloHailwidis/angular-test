@@ -38,7 +38,7 @@ describe('View1Ctrl', function() {
 
 		it('should add negative numbers', function() {
 		    var addFn = $scope.add(a, c);
-		    expect(addFn).toEqual(18);
+		    expect(addFn).toEqual(181);
 		});
 
 	})
